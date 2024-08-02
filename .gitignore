@@ -1,0 +1,16 @@
+.cmake
+CMakeFiles
+cmake_build
+Testing
+cmake-build-debug
+king_albert_cpp
+cmakeinstall.cmake
+king_albert_cpp.cbp
+ka
+ka.cbp
+libka_common.a
+log
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+.idea/*
