@@ -2,7 +2,6 @@
 
 #include <cassert>
 #include <iostream>
-#include <jewel/log.hpp>
 #include <string>
 
 namespace ka {
