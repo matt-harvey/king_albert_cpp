@@ -1,7 +1,7 @@
 #include <iostream>
 #include <random>
 
-#include "../include/Game.h"
+#include "Game.h"
 
 auto main() -> int {
     auto random_device { std::random_device() };

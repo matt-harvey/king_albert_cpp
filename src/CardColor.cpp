@@ -1,4 +1,4 @@
-#include "../include/CardColor.h"
+#include "CardColor.h"
 
 #include <iostream>
 

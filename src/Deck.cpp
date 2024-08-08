@@ -1,8 +1,4 @@
-//
-// Created by Matthew on 4/08/2024.
-//
-
-#include "../include/Deck.h"
+#include "Deck.h"
 
 #include <cassert>
 #include <random>

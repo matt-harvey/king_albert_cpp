@@ -1,4 +1,4 @@
-#include "../include/FoundationPosition.h"
+#include "FoundationPosition.h"
 
 #include <cassert>
 #include <iostream>

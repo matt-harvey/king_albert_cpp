@@ -1,4 +1,4 @@
-#include "../include/Rank.h"
+#include "Rank.h"
 
 #include <ostream>
 #include <stdexcept>

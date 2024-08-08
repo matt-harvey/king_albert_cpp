@@ -1,4 +1,4 @@
-#include "../include/Suit.h"
+#include "Suit.h"
 
 #include <cassert>
 #include <ostream>

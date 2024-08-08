@@ -1,4 +1,4 @@
-#include "../include/ColumnPosition.h"
+#include "ColumnPosition.h"
 
 namespace ka {
 
