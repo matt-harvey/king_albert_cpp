@@ -4,13 +4,13 @@
 namespace ka {
 
 enum class GameState {
-  unprepared,
-  prepared,
-  playing,
-  quit,
-  won,
+    unprepared,
+    prepared,
+    playing,
+    won,
+    quit,
 };
 
-} // ka
+} // namespace ka
 
-#endif //KING_ALBERT_CPP_INCLUDE_GAMESTATE_H
+#endif // KING_ALBERT_CPP_INCLUDE_GAMESTATE_H
