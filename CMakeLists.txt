@@ -11,6 +11,7 @@ include_directories(include)
 
 set(
     common_sources
+    src/AnsiColor.cpp
     src/Board.cpp
     src/ColumnPosition.cpp
     src/Deck.cpp

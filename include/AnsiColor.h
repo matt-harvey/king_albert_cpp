@@ -1,7 +1,7 @@
 #ifndef KA_INCLUDE_ANSI_COLOR_H
 #define KA_INCLUDE_ANSI_COLOR_H
 
-#include <iostream>
+#include <iosfwd>
 #include <string>
 #include <utility>
 
@@ -14,16 +14,16 @@ auto constexpr blue { "\033[34m" };
 auto constexpr green { "\033[32m" };
 auto constexpr reset { "\033[0m" };
 
-struct printer {
-    printer(std::ostream &os, std::string const &format) : os { os } {
-        os << format;
-    }
-    ~printer() {
-        os << reset;
-    }
-    std::ostream &os;
+class printer {
+public:
+    printer(std::ostream &os, std::string const &format);
+    ~printer();
+
+private:
+    std::ostream &m_os;
 };
-}; // namespace ansi_color
+
+} // namespace ansi_color
 
 } // namespace ka
 

@@ -1,6 +1,6 @@
 #include "Rank.h"
 
-#include <ostream>
+#include <iostream>
 #include <stdexcept>
 #include <utility>
 

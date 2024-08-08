@@ -1,8 +1,6 @@
 #include "FoundationPosition.h"
 
-#include <cassert>
 #include <iostream>
-#include <jewel/log.hpp>
 #include <optional>
 
 namespace ka {
