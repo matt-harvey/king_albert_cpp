@@ -34,7 +34,7 @@ private:
     Suit m_suit;
 };
 
-auto operator<<(std::ostream &o, Card card) -> std::ostream &;
+auto operator<<(std::ostream& o, Card card) -> std::ostream&;
 
 } // namespace ka
 

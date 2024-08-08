@@ -6,14 +6,14 @@
 
 namespace ka {
 
-auto Game::prepare(std::random_device &random_device) -> void {
+auto Game::prepare(std::random_device& random_device) -> void {
     auto deck { Deck {} };
     deck.shuffle(random_device);
     m_board->deal_from(deck);
     m_game_state = GameState::prepared;
 }
 
-auto Game::play(std::ostream &out, std::istream &in) -> void {
+auto Game::play(std::ostream& out, std::istream& in) -> void {
     m_game_state = GameState::playing;
 
     while (true) {
@@ -35,7 +35,7 @@ auto Game::play(std::ostream &out, std::istream &in) -> void {
     }
 }
 
-auto Game::consume_move(std::ostream &out, std::istream &in) -> void {
+auto Game::consume_move(std::ostream& out, std::istream& in) -> void {
     ansi_color::printer const _ { out, ansi_color::green };
 
     while (true) {

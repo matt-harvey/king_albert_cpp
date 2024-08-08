@@ -16,11 +16,11 @@ auto constexpr reset { "\033[0m" };
 
 class printer {
 public:
-    printer(std::ostream &os, std::string const &format);
+    printer(std::ostream& os, std::string const& format);
     ~printer();
 
 private:
-    std::ostream &m_os;
+    std::ostream& m_os;
 };
 
 } // namespace ansi_color

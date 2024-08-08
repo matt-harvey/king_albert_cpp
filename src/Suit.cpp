@@ -18,7 +18,7 @@ auto color(Suit suit) -> CardColor {
     return CardColor::red;
 }
 
-auto operator<<(std::ostream &o, Suit suit) -> std::ostream & {
+auto operator<<(std::ostream& o, Suit suit) -> std::ostream& {
     ansi_color::printer const _ { o, ansi_color_for(color(suit)) };
 
     switch (suit) {

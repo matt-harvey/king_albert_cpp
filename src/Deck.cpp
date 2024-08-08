@@ -30,7 +30,7 @@ auto Deck::empty() const -> bool {
     return m_cards.empty();
 }
 
-auto Deck::shuffle(std::random_device &rd) -> void {
+auto Deck::shuffle(std::random_device& rd) -> void {
     std::shuffle(m_cards.begin(), m_cards.end(), rd);
 }
 

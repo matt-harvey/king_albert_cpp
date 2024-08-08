@@ -26,7 +26,7 @@ auto HandPosition::receive(Card card) -> void {
     ; // noop
 }
 
-auto operator<<(std::ostream &o, HandPosition const &h) -> std::ostream & {
+auto operator<<(std::ostream& o, HandPosition const& h) -> std::ostream& {
     if (h.m_card.has_value()) {
         o << h.m_card.value();
     } else {

@@ -11,7 +11,7 @@ namespace {
 auto const clear_screen { "\033[2J\033[H" };
 }
 
-auto Board::deal_from(Deck &shuffled_deck) -> void {
+auto Board::deal_from(Deck& shuffled_deck) -> void {
     m_foundations.push_back(std::make_shared<FoundationPosition>(Suit::spades));
     m_foundations.push_back(std::make_shared<FoundationPosition>(Suit::hearts));
     m_foundations.push_back(std::make_shared<FoundationPosition>(Suit::diamonds));
@@ -37,7 +37,7 @@ auto Board::completed() const -> bool {
         return false;
     }
     return std::ranges::all_of(m_foundations.cbegin(), m_foundations.cend(),
-                               [](auto const &f) { return f->completed(); });
+                               [](auto const& f) { return f->completed(); });
 }
 
 auto Board::parse_move(char from_label, char to_label) -> std::optional<Move> {
@@ -52,7 +52,7 @@ auto Board::parse_move(char from_label, char to_label) -> std::optional<Move> {
     return { Move { from_position, to_position } };
 }
 
-auto Board::execute_move(Move const &move) -> bool {
+auto Board::execute_move(Move const& move) -> bool {
     auto from_position { std::get<0>(move) };
     if (!from_position->can_give()) {
         return false;
@@ -96,7 +96,7 @@ auto Board::position_labelled(char label) -> std::shared_ptr<Position> {
     }
 }
 
-auto operator<<(std::ostream &o, Board const &board) -> std::ostream & {
+auto operator<<(std::ostream& o, Board const& board) -> std::ostream& {
     o << clear_screen << std::endl;
 
     // Print foundations
@@ -104,7 +104,7 @@ auto operator<<(std::ostream &o, Board const &board) -> std::ostream & {
         ansi_color::printer const _ { o, ansi_color::blue };
         o << "                    [a] [b] [c] [d]" << std::endl << std::endl << "                   ";
     }
-    for (auto const &foundation : board.m_foundations) {
+    for (auto const& foundation : board.m_foundations) {
         o << ' ' << *foundation;
     }
     o << std::endl << std::endl << std::endl;
@@ -116,7 +116,7 @@ auto operator<<(std::ostream &o, Board const &board) -> std::ostream & {
     }
     auto num_columns_output { 0 };
     for (auto i { 0 };; ++i) {
-        for (auto const &column : board.m_columns) {
+        for (auto const& column : board.m_columns) {
             if (i < column->size()) {
                 o << column->card_at(i) << ' ';
                 ++num_columns_output;
@@ -137,7 +137,7 @@ auto operator<<(std::ostream &o, Board const &board) -> std::ostream & {
         ansi_color::printer const _ { o, ansi_color::blue };
         o << "[n] [o] [p] [q] [r] [s] [t]" << std::endl << std::endl;
     }
-    for (auto const &hp : board.m_hand) {
+    for (auto const& hp : board.m_hand) {
         o << *hp << ' ';
     }
     o << std::endl;

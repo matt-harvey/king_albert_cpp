@@ -21,13 +21,13 @@ public:
     [[nodiscard]] auto is_king() const -> bool {
         return m_value == max_value;
     };
-    friend auto operator<<(std::ostream &, Rank rank) -> std::ostream &;
+    friend auto operator<<(std::ostream&, Rank rank) -> std::ostream&;
 
 private:
     int m_value;
 };
 
-auto operator<<(std::ostream &o, Rank rank) -> std::ostream &;
+auto operator<<(std::ostream& o, Rank rank) -> std::ostream&;
 
 } // namespace ka
 

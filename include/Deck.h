@@ -12,7 +12,7 @@ class Deck {
 public:
     Deck();
     auto deal() -> Card;
-    auto shuffle(std::random_device &) -> void;
+    auto shuffle(std::random_device&) -> void;
     [[nodiscard]] auto empty() const -> bool;
 
 private:

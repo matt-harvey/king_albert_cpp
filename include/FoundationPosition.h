@@ -20,7 +20,7 @@ public:
     auto receive(Card card) -> void override;
 
     [[nodiscard]] auto completed() const -> bool;
-    friend auto operator<<(std::ostream &, FoundationPosition const &) -> std::ostream &;
+    friend auto operator<<(std::ostream&, FoundationPosition const&) -> std::ostream&;
 
 private:
     Suit m_suit;

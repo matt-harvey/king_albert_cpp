@@ -38,7 +38,7 @@ auto FoundationPosition::completed() const -> bool {
     return m_rank.has_value() && m_rank.value().is_king();
 }
 
-auto operator<<(std::ostream &o, FoundationPosition const &f) -> std::ostream & {
+auto operator<<(std::ostream& o, FoundationPosition const& f) -> std::ostream& {
     ansi_color::printer const _ { o, ansi_color_for(color(f.m_suit)) };
     if (f.m_rank.has_value()) {
         o << f.m_rank.value();

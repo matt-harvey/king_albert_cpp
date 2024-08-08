@@ -6,7 +6,7 @@ namespace ka {
 
 namespace ansi_color {
 
-printer::printer(std::ostream &os, std::string const &format) : m_os { os } {
+printer::printer(std::ostream& os, std::string const& format) : m_os { os } {
     m_os << format;
 }
 printer::~printer() {

@@ -21,7 +21,7 @@ constexpr auto const suit_count { all_suits.size() };
 
 auto color(Suit suit) -> CardColor;
 
-auto operator<<(std::ostream &o, Suit suit) -> std::ostream &;
+auto operator<<(std::ostream& o, Suit suit) -> std::ostream&;
 
 } // namespace ka
 

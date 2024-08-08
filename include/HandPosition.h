@@ -19,7 +19,7 @@ public:
     [[nodiscard]] auto can_receive(Card card) const -> bool override;
     auto receive(Card card) -> void override;
 
-    friend auto operator<<(std::ostream &, HandPosition const &) -> std::ostream &;
+    friend auto operator<<(std::ostream&, HandPosition const&) -> std::ostream&;
 
 private:
     std::optional<Card> m_card;

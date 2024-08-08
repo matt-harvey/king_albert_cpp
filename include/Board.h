@@ -20,12 +20,12 @@ public:
     typedef std::pair<std::shared_ptr<Position>, std::shared_ptr<Position>> Move;
 
     Board() = default;
-    Board(Board const &) = delete;
-    auto deal_from(Deck &shuffled_deck) -> void;
+    Board(Board const&) = delete;
+    auto deal_from(Deck& shuffled_deck) -> void;
     [[nodiscard]] auto completed() const -> bool;
     [[nodiscard]] auto parse_move(char from_label, char to_label) -> std::optional<Move>;
-    static auto execute_move(Move const &) -> bool;
-    friend auto operator<<(std::ostream &, Board const &) -> std::ostream &;
+    static auto execute_move(Move const&) -> bool;
+    friend auto operator<<(std::ostream&, Board const&) -> std::ostream&;
 
 private:
     [[nodiscard]] auto position_labelled(char) -> std::shared_ptr<Position>;
@@ -34,7 +34,7 @@ private:
     std::vector<std::shared_ptr<HandPosition>> m_hand;
 };
 
-auto operator<<(std::ostream &o, Board const &board) -> std::ostream &;
+auto operator<<(std::ostream& o, Board const& board) -> std::ostream&;
 
 } // namespace ka
 

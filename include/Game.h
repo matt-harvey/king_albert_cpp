@@ -14,15 +14,15 @@ namespace ka {
 class Game {
 public:
     Game() : m_board { std::make_unique<Board>() }, m_game_state { GameState::unprepared } {};
-    Game(Game const &) = delete;
-    auto prepare(std::random_device &) -> void;
-    auto play(std::ostream &out, std::istream &in) -> void;
+    Game(Game const&) = delete;
+    auto prepare(std::random_device&) -> void;
+    auto play(std::ostream& out, std::istream& in) -> void;
 
 private:
     auto set_game_state(GameState game_state) -> void {
         m_game_state = game_state;
     };
-    auto consume_move(std::ostream &out, std::istream &in) -> void;
+    auto consume_move(std::ostream& out, std::istream& in) -> void;
     std::unique_ptr<Board> m_board;
     GameState m_game_state;
 };

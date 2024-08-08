@@ -20,7 +20,7 @@ auto Rank::precedes(Rank other) const -> bool {
     return other.follows(*this);
 }
 
-auto operator<<(std::ostream &o, Rank rank) -> std::ostream & {
+auto operator<<(std::ostream& o, Rank rank) -> std::ostream& {
     auto const value { rank.m_value };
     switch (value) {
     case 1:
