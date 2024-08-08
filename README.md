@@ -8,6 +8,7 @@ Build it:
 
 ```
 cmake .
+make
 ```
 
 Play it:
