@@ -6,10 +6,7 @@
 namespace ka {
 
 struct Move {
-    /** non-owning pointer to the position to be moved from */
     Position& from;
-
-    /** non-owning pointer to the position to be moved to */
     Position& to;
 };
 
