@@ -2,7 +2,6 @@
 #define KING_ALBERT_CPP_INCLUDE_BOARD_H
 
 #include <iosfwd>
-#include <memory>
 #include <optional>
 #include <vector>
 
@@ -10,6 +9,7 @@
 #include "Deck.h"
 #include "FoundationPosition.h"
 #include "HandPosition.h"
+#include "Move.h"
 #include "Position.h"
 #include "Suit.h"
 
@@ -17,8 +17,6 @@ namespace ka {
 
 class Board {
 public:
-    typedef std::pair<std::shared_ptr<Position>, std::shared_ptr<Position>> Move;
-
     Board() = default;
     Board(Board const&) = delete;
     auto deal_from(Deck& shuffled_deck) -> void;
@@ -28,10 +26,15 @@ public:
     friend auto operator<<(std::ostream&, Board const&) -> std::ostream&;
 
 private:
-    [[nodiscard]] auto position_labelled(char) -> std::shared_ptr<Position>;
-    std::vector<std::shared_ptr<FoundationPosition>> m_foundations;
-    std::vector<std::shared_ptr<ColumnPosition>> m_columns;
-    std::vector<std::shared_ptr<HandPosition>> m_hand;
+    /**
+     * @returns a non-owning pointer to a position identified by the char, or nullptr if
+     *   there is no such position.
+     */
+    [[nodiscard]] auto position_labelled(char) -> Position*;
+
+    std::vector<FoundationPosition> m_foundations;
+    std::vector<ColumnPosition> m_columns;
+    std::vector<HandPosition> m_hand;
 };
 
 auto operator<<(std::ostream& o, Board const& board) -> std::ostream&;
