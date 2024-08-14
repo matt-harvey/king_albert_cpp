@@ -15,18 +15,20 @@ auto Game::prepare(std::random_device& random_device) -> void {
 
 auto Game::play(std::ostream& out, std::istream& in) -> void {
     m_game_state = GameState::playing;
+    out << *m_board;
 
     while (true) {
-        out << *m_board;
         consume_move(out, in);
 
         switch (m_game_state) {
         case GameState::playing:
+            out << *m_board;
             break;
         case GameState::quit:
             out << std::endl << "Thanks for playing. Goodbye!" << std::endl;
             return;
         case GameState::won:
+            out << *m_board;
             out << std::endl << "You won. Congratulations!" << std::endl;
             return;
         default:
